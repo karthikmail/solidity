@@ -68,13 +68,13 @@ ReadFile::Callback wrapReadCallback(CStyleReadFileCallback _readCallback = nullp
 				result.success = false;
 				result.contentsOrErrorMessage = "File not found.";
 			}
-			if (contents_c)
+			else if (contents_c)
 			{
 				result.success = true;
 				result.contentsOrErrorMessage = string(contents_c);
 				free(contents_c);
 			}
-			if (error_c)
+			else if (error_c)
 			{
 				result.success = false;
 				result.contentsOrErrorMessage = string(error_c);
